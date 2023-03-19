@@ -5,7 +5,7 @@ use gtk::{gio, Application};
 use window::Window;
 
 
-// comment for version 1.0
+// comment for version 2.0
 
 const APP_ID: &str = "org.gtk_rs.single-button";
 
