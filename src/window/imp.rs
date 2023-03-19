@@ -6,10 +6,13 @@ use gtk::{glib, Button, CompositeTemplate};
 // ANCHOR: object
 // Object holding the state
 #[derive(CompositeTemplate, Default)]
-#[template(resource = "/org/gtk_rs/example/window.ui")]
+// must agree with the 'gresource prefix' in resources.gresource.xml
+#[template(resource = "/com/outlook/richard/personal/gtk4-rust/window.ui")]
 pub struct Window {
     #[template_child]
-    pub button: TemplateChild<Button>,
+    pub button1: TemplateChild<Button>,
+    #[template_child]
+    pub button2: TemplateChild<Button>,
 }
 // ANCHOR_END: object
 
@@ -39,10 +42,16 @@ impl ObjectImpl for Window {
         // Call "constructed" on parent
         self.parent_constructed();
 
-        // Connect to "clicked" signal of `button`
-        self.button.connect_clicked(move |button| {
-            // Set the label to "Hello World!" after the button has been clicked on
-            button.set_label("Hello World!");
+        // Connect to "clicked" signal of `button 1`
+        self.button1.connect_clicked(move |button| {
+            // Set the label
+            button.set_label("Click 1");
+        });
+
+        // Connect to "clicked" signal of `button 2`
+        self.button2.connect_clicked(move |button| {
+            // Set the label
+            button.set_label("Click 2");
         });
     }
 }

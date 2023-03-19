@@ -7,7 +7,7 @@ use window::Window;
 
 // comment for version 3.0
 
-const APP_ID: &str = "org.gtk_rs.single-button";
+const APP_ID: &str = "com.outlook.richard.personal.gtk4-rust";
 
 fn main() {
     // Register and include resources
