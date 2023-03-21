@@ -1,38 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
 
-  <!-- the menu model -->
-  <menu id="main-menu">
-    <item>
-      <attribute name="label" translatable="yes">_Close window</attribute>
-      <!-- inbuilt window close action -->
-      <attribute name="action">window.close</attribute>
-    </item>
-    <item>
-      <attribute name="label" translatable="yes">Option 1</attribute>
-      <attribute name="action">win.option1</attribute>
-    </item>
-    <item>
-      <attribute name="label" translatable="yes">Option 2</attribute>
-      <attribute name="action">win.option2</attribute>
-    </item>
-  </menu>
-
   <template class="MyGtkAppWindow" parent="GtkApplicationWindow">
     <property name="title">gtk4 rust</property>
 
-    <!-- the menu bar -->
-    <child type="titlebar">
-      <object class="GtkHeaderBar">
-        <child type ="end">
-          <object class="GtkMenuButton">
-            <property name="icon-name">open-menu-symbolic</property>
-            <property name="menu-model">main-menu</property>
-            <property name="tooltip-text" translatable="yes">Main Menu</property>
-          </object>
-        </child>
-      </object>
-    </child>
 
     <!-- box layout, vertical -->
     <child>
@@ -44,6 +15,7 @@
         <property name="margin-end">12</property>
         <property name="spacing">12</property>
         <property name="halign">center</property>
+
 
         <!-- button 1 -->
         <child>
