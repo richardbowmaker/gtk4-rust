@@ -1,7 +1,7 @@
 use glib::subclass::InitializingObject;
 use gtk::prelude::*;
 use gtk::subclass::prelude::*;
-use gtk::{glib, Button, CompositeTemplate};
+use gtk::{glib, Button, Label, CompositeTemplate};
 
 // ANCHOR: object
 // Object holding the state
@@ -13,6 +13,10 @@ pub struct Window {
     pub button1: TemplateChild<Button>,
     #[template_child]
     pub button2: TemplateChild<Button>,
+    #[template_child]
+    pub label: TemplateChild<Label>,
+    #[template_child]
+    pub gtk_box: TemplateChild<gtk::Box>,
 }
 // ANCHOR_END: object
 
@@ -53,6 +57,10 @@ impl ObjectImpl for Window {
             // Set the label
             button.set_label("Click 2");
         });
+
+        // Add actions
+        self.obj().setup_actions();
+
     }
 }
 // ANCHOR_END: object_impl

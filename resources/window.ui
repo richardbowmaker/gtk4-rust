@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
 
-    <!-- the menu model -->
+  <!-- the menu model -->
   <menu id="main-menu">
     <item>
       <attribute name="label" translatable="yes">_Close window</attribute>
+      <!-- inbuilt window close action -->
+      <attribute name="action">window.close</attribute>
     </item>
     <item>
-      <attribute name="label" translatable="yes">_Sensitive button</attribute>
+      <attribute name="label" translatable="yes">Option 1</attribute>
+      <attribute name="action">win.option1</attribute>
     </item>
-    <section>
-      <attribute name="label" translatable="yes">Orientation</attribute>
-      <item>
-        <attribute name="label" translatable="yes">_Horizontal</attribute>
-      </item>
-      <item>
-        <attribute name="label" translatable="yes">_Vertical</attribute>
-      </item>
-    </section>
+    <item>
+      <attribute name="label" translatable="yes">Option 2</attribute>
+      <attribute name="action">win.option2</attribute>
+    </item>
   </menu>
 
   <template class="MyGtkAppWindow" parent="GtkApplicationWindow">
@@ -68,6 +66,12 @@
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel" id="label">
+            <property name="label">The label</property>
           </object>
         </child>
 
