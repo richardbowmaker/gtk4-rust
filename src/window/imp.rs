@@ -46,17 +46,17 @@ impl ObjectImpl for Window {
         // Call "constructed" on parent
         self.parent_constructed();
 
-        // Connect to "clicked" signal of `button 1`
-        self.button1.connect_clicked(move |button| {
-            // Set the label
-            button.set_label("Click 1");
-        });
+        // // Connect to "clicked" signal of `button 1`
+        // self.button1.connect_clicked(move |button| {
+        //     // Set the label
+        //     button.set_label("Click 1");
+        // });
 
-        // Connect to "clicked" signal of `button 2`
-        self.button2.connect_clicked(move |button| {
-            // Set the label
-            button.set_label("Click 2");
-        });
+        // // Connect to "clicked" signal of `button 2`
+        // self.button2.connect_clicked(move |button| {
+        //     // Set the label
+        //     button.set_label("Click 2");
+        // });
 
         // Add actions
         self.obj().setup_actions();
